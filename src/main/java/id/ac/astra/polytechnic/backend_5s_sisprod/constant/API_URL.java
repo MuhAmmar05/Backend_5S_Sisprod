@@ -6,4 +6,7 @@ public class API_URL {
 
 
     public static final String DOKUMEN_SOP_URL = BASE_URL + "/sop/dokumen/";
+    public static final String FOTO_PENGGUNA_URL = BASE_URL + "/user/foto/";
+    public static final String FOTO_ABSENSI_URL = BASE_URL + "/present/foto/";
+    public static final String FOTO_TEMPAT_URL = BASE_URL + "/tempat/foto/";
 }

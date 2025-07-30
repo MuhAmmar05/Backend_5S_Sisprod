@@ -21,11 +21,11 @@ public class LogPenyimpananService {
             List<Object[]> listData = logPenyimpananRepository.searchLogByNamaBarangOrZona(search, search);
 
             List<LogPenyimpananVo> listVos = listData.stream().map(obj -> new LogPenyimpananVo(
-                    ((Number) obj[0]).intValue(),       // id_log
-                    (String) obj[1],                     // nama_barang
-                    (String) obj[2],                     // nama_zona
-                    (LocalDateTime) obj[3],              // waktu_log
-                    (String) obj[4]                      // keterangan
+                    ((Number) obj[0]).intValue(),
+                    (String) obj[1],
+                    (String) obj[2],
+                    (LocalDateTime) obj[3],
+                    (String) obj[4]
             )).toList();
 
             return new DtoResponse(200, listVos, "OK");

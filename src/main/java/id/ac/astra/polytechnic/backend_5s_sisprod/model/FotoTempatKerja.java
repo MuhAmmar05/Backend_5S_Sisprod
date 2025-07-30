@@ -17,7 +17,13 @@ public class FotoTempatKerja {
     private Integer idPengguna;
 
     @Column(name = "jenis_foto")
-    private Integer jenisFoto;
+    @Enumerated(EnumType.STRING)
+    private Jenis jenisFoto;
+
+    public enum Jenis {
+        awal,
+        akhir;
+    }
 
     @Column(name = "lokasi_kerja")
     private String lokasiKerja;
@@ -30,7 +36,7 @@ public class FotoTempatKerja {
 
     public FotoTempatKerja() {}
 
-    public FotoTempatKerja(Integer idFoto, Integer idPengguna, Integer jenisFoto, String lokasiKerja, String foto, LocalDateTime waktuFoto) {
+    public FotoTempatKerja(Integer idFoto, Integer idPengguna, Jenis jenisFoto, String lokasiKerja, String foto, LocalDateTime waktuFoto) {
         this.idFoto = idFoto;
         this.idPengguna = idPengguna;
         this.jenisFoto = jenisFoto;
@@ -55,11 +61,11 @@ public class FotoTempatKerja {
         this.idPengguna = idPengguna;
     }
 
-    public Integer getJenisFoto() {
+    public Jenis getJenisFoto() {
         return jenisFoto;
     }
 
-    public void setJenisFoto(Integer jenisFoto) {
+    public void setJenisFoto(Jenis jenisFoto) {
         this.jenisFoto = jenisFoto;
     }
 
